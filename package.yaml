@@ -1,0 +1,31 @@
+name:    plutus-unlift
+version: "0.1.0"
+
+dependencies:
+
+- base
+- bytestring
+- template-haskell
+- plutus-tx
+- language-plutus-core
+- wallet-api
+
+ghc-options:
+- -Wall
+- -Werror
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Language.PlutusTx.Unlift
+
+tests:
+  plutus-unlift-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options: -Wall
+    dependencies:
+    - plutus-unlift
+    - hspec
+    - QuickCheck
+    - generic-arbitrary
